@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Leap Years</h1>
+    <p>Enter a year:</p>
+    <div>
+        <input id="year" type="text" size="24" />
+        <button onclick="leapYears()">Compute Leap Years</button> <br />
+        <span id="output"></span>
+    </div>
+
+    <script type="text/javascript">
+        function leapYears() {
+            var input = document.getElementById("year");
+            var year = parseInt(input.value);
+            var output = document.getElementById("output");
+            output.innerHTML = "Next 10 leap years after " + year + ": ";
+            
+            var count = 0;
+            while (count < 10) {
+                if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
+                count++;
+                output.innerHTML += " " + year;
+                }
+                year++;
+            }
+        }
+    </script>
+</body>
+</html>
